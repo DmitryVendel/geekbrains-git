@@ -10,17 +10,19 @@ class Goods{ //Класс товары
 		$this->c = $c;
 	}
 	function v(){ // Объем
-		echo $v=$this->a*$this->b*$this->c;
+		echo $v=$this->a*$this->b*$this->c,"<br />";
 
 	}
 	
 }
-class TimeGoods extends Goods{
-	protected $t;
+class TimeGoods extends Goods{ //Товары с ограниченным временем хранения
+	protected $t; // Время хранения
 	function __construct($a, $b, $c, $t){
 		parent::__construct($a, $b, $c);
 		$this->t = $t;
 	}
+	function v(){ // Объем и время
+		echo $v=$this->a*$this->b*$this->c ,' Time:', $this->t,"<br />";}
 
 }
 $a1 = new Goods(5,12,32);
